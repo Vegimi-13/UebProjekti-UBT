@@ -10,15 +10,23 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     border-bottom: 0.5px solid black;
+    background-color: #F3F1FF;
 }
 
 .logo{
     display: flex;
     align-items: center;
+    
 }
 
 .logo > svg{
-    width: 40px;
+    width: 25px;
+    padding-right: 10px;
+    color: #7B66FF;
+}
+.logo > h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:bold;
 }
 
 /* Ndryshojme display te divit login-button ne flex per te bere center buttonin
@@ -26,6 +34,15 @@ dhe te jete ne te njejten vije ne header */
 .login-button{
     display: flex;
     align-items: center;
+}
+
+.login-button > input{
+    background-color: #7B66FF;
+    outline: none;
+    border: none;
+    color: white;
+    width: 97px;
+    height: 35px
 }
 
 
@@ -43,7 +60,10 @@ ul{
 
 ul > li{
     padding: 10px;
-    
+    font-family: "Bai Jamjuree", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
 }
 
 

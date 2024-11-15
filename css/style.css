@@ -1,22 +1,16 @@
-body {
-    margin: 0;
-    padding: 0;
-} 
-
 
 .header-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    border-bottom: 0.5px solid black;
-    background-color: #F3F1FF;
+    border-bottom: 0.5px solid rgba(59, 58, 58, 0.369);
+    /* background-color: #F3F1FF; */
 }
 
 .logo{
     display: flex;
     align-items: center;
-    
 }
 
 .logo > svg{
@@ -49,7 +43,7 @@ dhe te jete ne te njejten vije ne header */
 /* Ndryshojme style te listat */
 /* Importojme fontin qe deshirojme te perdorim ne listat */
 
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 ul{
     display: flex;
@@ -63,8 +57,68 @@ ul > li{
     font-family: "Bai Jamjuree", sans-serif;
     font-weight: 400;
     font-style: normal;
-
 }
+
+
+/* Slider */
+
+.container-slider{
+    display: flex;
+    background: url(../assets/images/background2.jpg) no-repeat center center;
+    background-size: cover;
+    height: 55vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+
+.container-slider > p, h1{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0;
+    padding: 25px;
+    
+}
+
+.container-slider > h1{
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.container-slider > p{
+    font-size: 25px;
+    color: #7B66FF;
+}
+
+/* .inner-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-basis: 40%;
+    gap: 5px;
+} */
+
+.container-slider> .p-black{
+    color: black;
+    font-size: large;    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

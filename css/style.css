@@ -188,6 +188,11 @@ ul > li{
 
 
 
+.google-card > svg{
+    border: 0.5px solid rgba(192, 189, 189, 0.539) ;
+    border-radius: 5px;
+}
+
 
 
 

@@ -163,8 +163,14 @@ ul > li{
     border: 0.5px solid rgb(173, 171, 171);
     text-wrap: wrap;
     padding: 25px 0 0 25px;
-    transition: box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+@media (min-width: 768px) {
+    .cards:hover {
+      transform: translateY(-10px); /* Leviz ne Y axis*/
+    }
+  }
 
 /* Hovers ne cards */
 
@@ -209,21 +215,7 @@ ul > li{
 
 
 
-@media only screen and (min-width: 600px) and (max-width:768px){
-    .cards{
-        width: 100%;
-    }
-}
 
-
-
-
-
- @media only screen and (max-width: 600px) {
-    .cards{
-        width: 100%;
-    }
- }
 
 
 
@@ -250,5 +242,46 @@ ul > li{
 
 
 
+/* REVEAL ON SCROLL */
 
 
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+
+@media only screen and (min-width: 600px) and (max-width:768px){
+    .cards{
+        width: 100%;
+    }
+}
+
+
+
+
+
+ @media only screen and (max-width: 600px) {
+    .cards{
+        width: 100%;
+        
+    }
+
+    .cards > p{
+        display: none;
+    }
+    .cards{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    
+ }

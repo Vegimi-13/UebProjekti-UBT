@@ -267,21 +267,30 @@ ul > li{
 
 
  @media only screen and (max-width: 600px) {
-    .cards{
-        width: 100%;
-        
-    }
+  
 
     .cards > p{
         display: none;
     }
     .cards{
+        width: 100%;
         display: flex;
-        justify-content: center;
         align-items: center;
         gap: 30px;
         padding: 20px;
+        transition: none;
     }
+    a{
+        width: 100%;
+    }
+    .cards:hover{
+        box-shadow: none;
+    }
+    .cards:hover > h4{
+        color: black;
+    }
+    
+   
 
     
  }

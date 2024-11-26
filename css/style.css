@@ -166,11 +166,6 @@ ul > li{
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (min-width: 768px) {
-    .cards:hover {
-      transform: translateY(-10px); /* Leviz ne Y axis*/
-    }
-  }
 
 /* Hovers ne cards */
 
@@ -204,6 +199,9 @@ ul > li{
 }
 
 
+#cards-header-link:visited{
+    color:black;
+}
 
 
 
@@ -219,7 +217,7 @@ ul > li{
 
 
 
-
+/* 
 .latest-container{
     display: flex;
     width: 100%;
@@ -236,7 +234,7 @@ ul > li{
     flex:1;
     text-align: end;
     margin-right: 50px;
-}
+} */
 
 
 
@@ -289,8 +287,10 @@ ul > li{
     .cards:hover > h4{
         color: black;
     }
-    
-   
-
-    
  }
+
+ @media (min-width: 768px) {
+    .cards:hover {
+      transform: translateY(-10px); /* Leviz ne Y axis*/
+    }
+  }

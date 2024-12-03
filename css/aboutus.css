@@ -83,8 +83,67 @@
 /* -------------------------------------------- */
 
 
+/* Our Numbers */
+
+.Our-Numbers{
+    display: flex;
+    justify-content: center;
+}
+
+.Our-Numbers > .display{
+    width: 80%;
+    margin-top: 50px;
+}
+
+.Our-Numbers  > .display > h1{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 36px;
+    color: #232535;
+    text-align: center;
+    margin-bottom: 55px;
+}
 
 
+.Numbers{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 50px;
+}
+
+.Numbers  h1{
+    font-family: "Inter", sans-serif;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 36px;
+    margin: 0px  0px 4px;
+    padding: 10px 25px ;
+    color: #232535;
+}
+.Numbers span{
+    color:#7B66FF;
+    padding-left: 2px;
+    font-weight: 600;
+    align-self: center;
+}
+
+.Numbers p {
+    text-align: center;
+    color:#a0a2b3;
+    letter-spacing: .06em;
+    font-size: 12px;
+    line-height: 1.25em;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+
+.Our-Numbers hr{
+    margin-top: 80px;
+    border:0.7px solid lightgrey;
+}
 /* Media Queries */
 
 

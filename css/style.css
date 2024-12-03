@@ -3,6 +3,12 @@
     justify-content: center;
 } */
 
+header {
+    height: 10vh; 
+    min-height: fit-content; 
+    max-height: 120px; 
+}
+
 .header-container{
     /* width: 80%; */
     display: flex;
@@ -12,6 +18,10 @@
     border-bottom: 0.5px solid rgba(59, 58, 58, 0.369);
     /* background-color: #F3F1FF; */
 }
+
+
+/* LOGO */
+/* Te njejtat properties i perdor edhe ne about us */
 
 .logo{
     display: flex;
@@ -28,6 +38,14 @@
     font-family: 'Courier New', Courier, monospace;
     font-weight:bold;
 }
+/* ############################ */
+
+
+
+
+
+
+
 
 /* Ndryshojme display te divit login-button ne flex per te bere center buttonin
 dhe te jete ne te njejten vije ne header */
@@ -51,6 +69,10 @@ dhe te jete ne te njejten vije ne header */
 
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+
+/* ########################## */
+/* Listat */
+/* Te njetat i perdorim edhe ne About us */
 ul{
     display: flex;
     list-style-type: none;
@@ -66,7 +88,7 @@ ul > li{
 }
 
 
-/* Slider */
+/* Slider (HERO section) */
 
 .container-slider{
     display: flex;
@@ -80,7 +102,8 @@ ul > li{
 }
 
 
-.container-slider > p, h1{
+.container-slider > p,
+.container-slider > h1{
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -160,7 +183,6 @@ ul > li{
 
 .job-cards svg{
     border-radius: 5px;
-    
 }
 
 .cards{
@@ -248,7 +270,9 @@ ul > li{
 
 
 
-
+/* ########################*/
+/* FOOTER */
+/* Te njetat properties i perdorim edhe ne pages tjera */
 
 
 footer{
@@ -262,7 +286,6 @@ footer{
 footer>hr{
     margin-top: 50px;
     border:0.7px solid lightgrey;
-    
 }
 
 .footer-container-row-1{
@@ -313,7 +336,6 @@ footer li{
     color: inherit;
 }
 .footer-pages > ul > li > a:hover{
-    
     transition: 0.4s ease;
     color: #7B66FF;
 }
@@ -325,6 +347,13 @@ footer li{
     color: #7B66FF;
     border: 1px solid #7B66FF;
 }
+
+/* .login-button > input:last-child:hover{
+    transition: 0.1s ease;
+    background-color: #7B66FF;
+    color: white;
+    border: 1px solid white;
+} */
 
 
 /* Media Queries */
@@ -437,7 +466,7 @@ footer li{
 
 
 
-  /* SLIDER */
+  /* SLIDER  me js ne ligjeraten tjeter java 8*/
 
   .slider{
     margin-top: 50px;

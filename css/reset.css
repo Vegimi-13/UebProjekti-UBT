@@ -8,8 +8,12 @@ a{
     text-decoration: none;
 }
 
-.active{
+.active-link{
     color: #7B66FF;
+}
+
+a:visited{
+    color: inherit;
 }
 
 body{

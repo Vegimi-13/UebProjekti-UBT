@@ -8,6 +8,10 @@ a{
     text-decoration: none;
 }
 
+.active{
+    color: #7B66FF;
+}
+
 body{
     line-height: 1.625em;
 }

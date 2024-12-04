@@ -99,7 +99,7 @@
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-size: 36px;
+    font-size: 32px;
     color: #232535;
     text-align: center;
     margin-bottom: 55px;
@@ -144,6 +144,92 @@
     margin-top: 80px;
     border:0.7px solid lightgrey;
 }
+/* -------------------------------------------- */
+
+
+
+/* Our Values Section */
+
+.our-values{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+}
+
+.our-values > .our-values-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 80%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.our-values-container > hr{
+    margin-top: 80px;
+    border:0.7px solid lightgrey;
+}
+
+.our-values-title > h1{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 32px;
+    color: #232535;
+    font-weight: 600; /* Semi bold font*/
+    margin-bottom: 16px;
+}
+
+
+
+.our-values-title > p{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #7B66FF;
+    font-size: 16px;
+}
+
+
+/* CARDS */
+/* -------------------------------------------- */
+
+.our-values-cards{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 50px;
+}
+.our-values-cards > .values{
+    width: 30%;
+    text-wrap: wrap;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    padding: 10px;
+}
+
+.values > svg{
+    margin-bottom: 10px;
+}
+.values  >h4{
+    font-size: large;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.values > p{
+    color: #a0a2b3;
+}
+/* -------------------------------------------- */
+
+/* FOOTER */
+footer{
+    margin-top: 100px;
+}
+/* -------------------------------------------- */
+
 /* Media Queries */
 
 
@@ -154,5 +240,14 @@
     .inner-hero{
         flex-basis: 100%;
     }
+
+    .our-values-cards{
+        flex-wrap: wrap;
+    }
+
+    .our-values-cards > .values{
+        width: 100%;
+    }
+
 }
 

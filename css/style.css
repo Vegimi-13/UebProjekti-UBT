@@ -1,44 +1,58 @@
-/* .conatiner{
-    display: flex;
-    justify-content: center;
-} */
 
-header {
-    height: 10vh; 
-    min-height: fit-content; 
-    max-height: 120px; 
-}
 
-.header-container{
-    /* width: 80%; */
+
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* ------------------------------------------------ */
+
+
+
+
+
+.navbar{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-around;
-    border-bottom: 0.5px solid rgba(59, 58, 58, 0.369);
-    /* background-color: #F3F1FF; */
-}
-
-
-/* LOGO */
-/* Te njejtat properties i perdor edhe ne about us */
-
-.logo{
-    display: flex;
     align-items: center;
-}
+    
+  }
 
-.logo > svg{
+  .navbar-logo{
+    display: flex;
+  }
+  .navbar-logo  > a{
+    font-size: x-large;
+    font-family: "Bai Jamjuree", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .navbar-logo > a{
+    align-self: center;
+  }
+  .navbar-logo> svg{
+    min-height: 70px;
     width: 35px;
     padding-right: 10px;
     color: #7B66FF;
-}
-.logo > h2{
-    margin-top: 3px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight:bold;
-}
-/* ############################ */
+    text-align: center;
+  }
+
+  .hamburger{
+    display: none;
+    cursor: pointer;
+    
+  }
+  .bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #484b62;
+  }
+/* ------------------------------------------------ */
 
 
 
@@ -62,17 +76,13 @@ dhe te jete ne te njejten vije ne header */
     width: 97px;
     height: 35px
 }
+/* ------------------------------------------------ */
 
 
-/* Ndryshojme style te listat */
-/* Importojme fontin qe deshirojme te perdorim ne listat */
-
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 
-/* ########################## */
-/* Listat */
-/* Te njetat i perdorim edhe ne About us */
+
+/* LISTAT */
 ul{
     display: flex;
     list-style-type: none;
@@ -86,6 +96,7 @@ ul > li{
     font-weight: 400;
     font-style: normal;
 }
+/* ------------------------------------------------ */
 
 
 /* Slider (HERO section) */
@@ -135,6 +146,7 @@ ul > li{
     color: black;
     font-size: large;    
 }
+/* ------------------------------------------------ */
 
 
 
@@ -193,6 +205,12 @@ ul > li{
     padding: 25px 0 0 25px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+/* ------------------------------------------------ */
+
+
+
+
+
 
 
 /* Hovers ne cards */
@@ -264,17 +282,14 @@ ul > li{
     margin-right: 50px;
 } */
 
+/* ------------------------------------------------ */
 
 
 
 
 
 
-/* ########################*/
 /* FOOTER */
-/* Te njetat properties i perdorim edhe ne pages tjera */
-
-
 footer{
     display: flex;
     flex-direction: column;
@@ -332,9 +347,7 @@ footer li{
 
 
 
-.footer-pages > ul > li > a:visited{
-    color: inherit;
-}
+
 .footer-pages > ul > li > a:hover{
     transition: 0.4s ease;
     color: #7B66FF;
@@ -354,6 +367,18 @@ footer li{
     color: white;
     border: 1px solid white;
 } */
+ /* ------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Media Queries */
@@ -458,6 +483,47 @@ footer li{
 
 
 
+  /* Media query BURGER */
+
+  @media(max-width:768px){
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity:0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navbar-logo>svg{
+        width: 45px;
+    }
+    
+
+    .nav-menu{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        background-color: white;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+    .nav-menu.active{
+        left: 0;
+
+    }
+  }
 
 
 
@@ -466,7 +532,11 @@ footer li{
 
 
 
-  /* SLIDER  me js ne ligjeraten tjeter java 8*/
+
+
+
+
+  /* SLIDER  me js ne ligjeraten tjeter java 9*/
 
   .slider{
     margin-top: 50px;
@@ -474,4 +544,11 @@ footer li{
     height: 50vh;
     display: flex;
     background-color: #7B66FF;
-  }
+  } 
+
+
+
+
+ 
+
+

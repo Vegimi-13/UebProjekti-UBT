@@ -14,8 +14,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
   }
+
 
   .navbar-logo{
     display: flex;
@@ -32,10 +32,18 @@
   }
   .navbar-logo> svg{
     min-height: 70px;
-    width: 35px;
+    width: 40px;
     padding-right: 10px;
     color: #7B66FF;
     text-align: center;
+  }
+
+  .nav-container{
+    display: flex;
+    align-items: center;
+  }
+  .nav-container > .login-button{
+    margin-left: 10px;
   }
 
   .hamburger{
@@ -52,6 +60,12 @@
     transition: all 0.3s ease-in-out;
     background-color: #484b62;
   }
+  .nav-menu  a {
+    transition: all 0.5s ease-in-out;
+  }
+  .nav-menu  a:hover{
+    color: #7B66FF;
+  }
 /* ------------------------------------------------ */
 
 
@@ -63,9 +77,12 @@
 
 /* Ndryshojme display te divit login-button ne flex per te bere center buttonin
 dhe te jete ne te njejten vije ne header */
+
+
+
+/* BUTTONAT  */
 .login-button{
     display: flex;
-    align-items: center;
 }
 
 .login-button > input{
@@ -74,7 +91,8 @@ dhe te jete ne te njejten vije ne header */
     border: none;
     color: white;
     width: 97px;
-    height: 35px
+    height: 35px;
+    cursor: pointer;
 }
 /* ------------------------------------------------ */
 
@@ -133,15 +151,6 @@ ul > li{
     font-size: 25px;
     color: #7B66FF;
 }
-
-/* .inner-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex-basis: 40%;
-    gap: 5px;
-} */
-
 .container-slider> .p-black{
     color: black;
     font-size: large;    
@@ -259,29 +268,6 @@ ul > li{
 
 
 
-
-
-
-
-/* 
-.latest-container{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.latest-container > h3{
-    flex: 1;
-    margin-left: 50px;
-}
-
-.latest-container > p{
-    flex:1;
-    text-align: end;
-    margin-right: 50px;
-} */
-
 /* ------------------------------------------------ */
 
 
@@ -306,6 +292,25 @@ footer>hr{
 .footer-container-row-1{
     display: flex;
     justify-content: flex-start;
+}
+
+.footer-container-row-1 > .logo > svg{
+    min-height: 70px;
+    width: 40px;
+    padding-right: 10px;
+    color: #7B66FF;
+    text-align: center;
+}
+.footer-container-row-1 > .logo> a{
+    font-size: x-large;
+    font-family: "Bai Jamjuree", serif;
+    font-weight: 500;
+    font-style: normal;
+    
+}
+.logo{
+    display: flex;
+    align-items: center;
 }
 
 .footer-pages{
@@ -427,7 +432,6 @@ footer li{
 
     .footer-pages{
         flex-direction: column;
-    
     }
     .footer-pages > .login-button{
         margin-top: 35px;
@@ -504,8 +508,10 @@ footer li{
         width: 45px;
     }
     
-
-    .nav-menu{
+    .nav-container > .nav-menu{
+        flex-direction: column;
+    }
+    .nav-container{
         position: fixed;
         left: -100%;
         top: 70px;
@@ -516,13 +522,22 @@ footer li{
         transition: 0.3s;
         background-color: white;
     }
-    .nav-item{
+    .nav-item{  
         margin: 16px 0;
     }
-    .nav-menu.active{
+    .nav-container.active{
         left: 0;
-
     }
+
+    .nav-container> .login-button {
+        display: flex;
+        justify-content: center;
+        width: 80%;
+    }
+    .login-button > input{
+        width: 100%;
+    }
+
   }
 
 
@@ -545,6 +560,8 @@ footer li{
     display: flex;
     background-color: #7B66FF;
   } 
+
+ 
 
 
 

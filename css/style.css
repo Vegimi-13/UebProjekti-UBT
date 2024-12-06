@@ -21,6 +21,7 @@
     display: flex;
   }
   .navbar-logo  > a{
+    color: black;
     font-size: x-large;
     font-family: "Bai Jamjuree", serif;
     font-weight: 500;
@@ -549,8 +550,6 @@ footer li{
 
 
 
-
-
   /* SLIDER  me js ne ligjeraten tjeter java 9*/
 
   .slider{
@@ -559,8 +558,11 @@ footer li{
     height: 50vh;
     display: flex;
     background-color: #7B66FF;
+    justify-content: center;
+    align-items: center;
   } 
 
+<<<<<<< Updated upstream
 
 .slider-container {
     width: 80%;
@@ -632,4 +634,6 @@ footer li{
 
  
 
+=======
+>>>>>>> Stashed changes
 

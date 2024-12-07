@@ -563,6 +563,69 @@ footer li{
     background-color: #7B66FF;
   } 
 
+
+  .slider-container {
+    width: 80%;
+    height: 80%;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: white;
+    color: blue;
+    border-radius: 10px;
+    font-size: 1.5em;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    z-index: 1;
+    transition: background-color 0.3s;
+}
+
+.side-button:hover {
+    background-color: #0056b3;
+}
+
+#prevBtn {
+   margin-right: 50px;
+}
+
+#nextBtn {
+    margin-left: 50px; /* Adjust as needed to position outside */
+}
  
 
 

@@ -41,7 +41,7 @@
 }
 
 .inner-pricing-cards{
-    width: 60%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     text-align: flex-start;

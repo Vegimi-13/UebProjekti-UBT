@@ -12,7 +12,8 @@ a{
     color: #7B66FF;
 }
 
-a:visited{
+
+a{
     color: inherit;
 }
 

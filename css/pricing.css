@@ -18,7 +18,7 @@
 .inner-hero > p{
     color: #484b62;
     align-self: center; /*e ben align ne mes  */
-    width: 550px; 
+    max-width: 550px; 
 }
 
 .inner-hero>h1{
@@ -46,6 +46,7 @@
     flex-wrap: wrap;
     text-align: flex-start;
     justify-content: space-between;
+    gap: 25px;
 
 }
 
@@ -128,3 +129,10 @@
 }
 
 
+@media (max-width: 768px) {
+    #cards{
+      flex: 1 1 100%; /* On smaller screens, cards will take up full width */
+    }
+  }
+
+  

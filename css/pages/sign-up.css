@@ -162,4 +162,8 @@ form hr{
     display: block;
 }
 
+.footer-container-row-1{
+    display: flex;
+    justify-content: space-between;
+}
 

@@ -179,6 +179,10 @@ form > #SignInBtn{
     font-size: 0.9em;
 }
 
+.footer-container-row-1{
+    display: flex;
+    justify-content: space-between;
+}
 
 
 

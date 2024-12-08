@@ -300,7 +300,7 @@ footer{
     width: 80%;
     margin-left: 10%;
     margin-top: 5%;
-    background-color: #faf9fc;
+
 }
 
 footer>hr{
@@ -572,11 +572,29 @@ footer li{
     height: 50vh;
     display: flex;
     background-color: #7B66FF;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
   } 
+
+  .slider-title{
+    font-family: "Inter", sans-serif;
+    color: white;
+    font-size: 80px;
+    height: fit-content;
+  }
+  .slider-title > h1{
+    height: fit-content;
+  }
+  .slider svg{
+    width: 200px;
+    height: 200px;
+  }
 
 
   .slider-container {
-    width: 80%;
+    width: 30%;
     height: 80%;
     position: relative;
     overflow: hidden;
@@ -584,7 +602,7 @@ footer li{
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
-    align-items: center;
+    
 }
 
 .slider-wrapper {
@@ -611,31 +629,28 @@ footer li{
 }
 
 .side-button {
-    background: #007BFF;
+    background-color: inherit;
     color: white;
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 5.5em;
     z-index: 1;
     transition: background-color 0.3s;
 }
 
-.side-button:hover {
-    background-color: #0056b3;
-}
 
 #prevBtn {
-   margin-right: 50px;
+   margin-right: 15px;
 }
 
 #nextBtn {
-    margin-left: 50px; /* Adjust as needed to position outside */
+    margin-left: 15px; /* Adjust as needed to position outside */
 }
  
 

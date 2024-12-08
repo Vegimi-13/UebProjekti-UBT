@@ -223,6 +223,7 @@ ul > li{
 .cards{
     border-radius:5px;
     width: 347px;
+    height: 375px;
     border: 0.5px solid rgb(173, 171, 171);
     text-wrap: wrap;
     padding: 25px 0 0 25px;
@@ -265,6 +266,9 @@ ul > li{
 .cards > p{
     color: #484b62;
     margin: 5px 0 0 0;
+}
+ #paragraph{
+    height: 104px;
 }
 
 
@@ -636,8 +640,34 @@ footer li{
  
 
 
+.tags{
+    margin-top: 40px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    
+}
 
+.tags svg{
+    width: 19px;
+    color: #232535;
+    margin-right: 3px;
 
+}
+#location{
+    display: flex;
+    align-items: center;
+    border: 1px solid #eaebf3;
+    box-shadow: 0 1px 4px 0 #14142b14;
+    border-radius: 4px;
+    width: fit-content;
+    padding: 3px 6px;
+}
+
+#location p{
+    color: #484b62;
+    font-size: 15px;
+}
  
 
 

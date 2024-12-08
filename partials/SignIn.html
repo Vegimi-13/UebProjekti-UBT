@@ -21,12 +21,7 @@
             <a href="#">Devjobs</a>
 
         </div>
-
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+            
     </nav>
     <div class="signin-container">
         
@@ -41,11 +36,18 @@
               <p>Please fill your email and password to sign in.</p>
               
             <div class="form-container">
-                <form action="">
-                    <label for="">Email</label>
-                    <input type="email" name="email" id="" placeholder="Email Address">
-                    <label for="" class="password">Password</label>
-                    <input type="password" name="" id="" placeholder="Enter your password">
+                <form action="" id="signinForm">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Email Address">
+                    <span class="error" id="emailError"></span>
+
+
+
+                    <label for="password" class="password">Password</label>
+                    <input type="password" name="passwrod" id="password" placeholder="Enter your password">
+                    <span class="error" id="passwordError"></span>
+
+
                     <div class="remember-me">
                         <label>
                             <input type="checkbox" name="option1" value="Option 1"> Remember me
@@ -68,7 +70,7 @@
                                 <p>Sign in with Facebook</p>
                             </a>
                             
-                            <p>Don’t have an account? <span>Sign up today</span></p>
+                            <p>Don’t have an account? <span> <a href="./SignUp.html">Sign up today</a> </span></p>
                         
                     </div>
                     
@@ -88,5 +90,7 @@
 
 
     </header>
+
+    <script src="../js/auth.js"></script>
 </body>
 </html>

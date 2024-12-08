@@ -88,6 +88,16 @@ dhe te jete ne te njejten vije ne header */
     display: flex;
 }
 
+.login-button >form> input{
+    background-color: #7B66FF;
+    outline: none;
+    border: none;
+    color: white;
+    width: 97px;
+    height: 35px;
+    cursor: pointer;
+}
+
 .login-button > input{
     background-color: #7B66FF;
     outline: none;
@@ -97,6 +107,7 @@ dhe te jete ne te njejten vije ne header */
     height: 35px;
     cursor: pointer;
 }
+
 /* ------------------------------------------------ */
 
 
@@ -329,18 +340,17 @@ footer li{
 
 
 
-.footer-pages> .login-button > input{
+.footer-pages> .login-button >form > input{
     margin-left: 25px;
 }
 
 
 
-.footer-pages > .login-button > #SignUpButton{
+ #signup-button{
     border: 1px solid #7B66FF;
     background-color: white;
     color: #7B66FF;
 }
-
 
 .footer-copyright{
     display: flex;
@@ -370,12 +380,7 @@ footer li{
     border: 1px solid #7B66FF;
 }
 
-/* .login-button > input:last-child:hover{
-    transition: 0.1s ease;
-    background-color: #7B66FF;
-    color: white;
-    border: 1px solid white;
-} */
+
  /* ------------------------------------------------ */
 
 
@@ -541,6 +546,8 @@ footer li{
     .login-button > input{
         width: 100%;
     }
+
+    
 
   }
 

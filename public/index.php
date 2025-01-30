@@ -1,3 +1,14 @@
+<?php 
+    require_once __DIR__ . '/../config/config.php';
+    
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,41 +27,7 @@
 
 
 
-        <nav class="navbar">
-
-            <div class="navbar-logo">
-                <svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M36.9997 20.0416L50.8747 12.3333L66.2913 21.4181V54.1234L52.4163 63.2083L21.583 44.7083V27.7499L52.4163 45.0386V29.2916L36.9997 20.0416ZM36.9997 20.0416L23.1247 12.3333L7.70907 21.5833L7.70801 53.9583L23.1247 63.2083L36.9997 53.9583"
-                        stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-
-                <a href="#">Devjobs</a>
-
-            </div>
-
-            <div class="nav-container">
-                <ul class="nav-menu">
-                    <li class="nav-item active-link"><a href="#" >Find Jobs</a></li>
-                    <li class="nav-item"><a href="./about.html" >About Us</a></li>
-                    <li class="nav-item"><a href="./pricing.html" >Pricing</a></li>
-                </ul>
-                <form action="./partials/SignIn.html" class="login-button">
-                    <input type="submit" value="Sign in" id="SignIn">
-                </form>
-            </div>
-
-
-
-
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-
-
+        <?php include('../public/partials/header.php') ?>
 
         <!-- <div class="login-button">
                 <input type="button" value="Sign in">

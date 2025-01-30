@@ -1,3 +1,22 @@
+<?php
+    session_start();
+    require_once __DIR__ . '/../../config/config.php';
+    // echo __DIR__; me pa pathin
+    $errorMessage = isset($_SESSION['errorMessage']) ? $_SESSION['errorMessage'] : ''; // Get error message from session
+    unset($_SESSION['errorMessage']);
+
+
+
+    if(isset($_SESSION["username"])){
+        header("Location: " .BASE_URL . "index.php");
+        exit();
+    }
+    
+    
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +37,7 @@
                     stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
 
-            <a href="../index.html">Devjobs</a>
+            <a href="<?php echo BASE_URL ?>index.php">Devjobs</a>
 
         </div>
             
@@ -36,7 +55,7 @@
               <p>Please fill your email and password to sign in.</p>
               
             <div class="form-container">
-                <form action="" id="signinForm">
+                <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post" id="signinForm">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="Email Address">
                     <span class="error" id="emailError"></span>
@@ -44,7 +63,7 @@
 
 
                     <label for="password" class="password">Password</label>
-                    <input type="password" name="passwrod" id="password" placeholder="Enter your password">
+                    <input type="password" name="passwordField" id="password" placeholder="Enter your password">
                     <span class="error" id="passwordError"></span>
 
 
@@ -54,7 +73,7 @@
                         </label>
                         <p>Forgot password?</p>
                     </div>
-                    <button type="submit" id="SignInBtn">Sign In</button>
+                    <button type="submit" name="login" id="SignInBtn">Sign In</button>
 
 
 
@@ -70,7 +89,7 @@
                                 <p>Sign in with Facebook</p>
                             </a>
                             
-                            <p>Don’t have an account? <span> <a href="./SignUp.html">Sign up today</a> </span></p>
+                            <p>Don’t have an account? <span> <a href="<?php echo BASE_URL ?>View/SignUp.php">Sign up today</a> </span></p>
                         
                     </div>
                     
@@ -102,8 +121,14 @@
                 </div>
             </div>
         </div>
-    </footer>
 
-    <script src="../js/auth.js"></script>
+    </footer>
+    <?php if ($errorMessage): ?>
+        <script>
+            alert("Invalid Username or password"); // Display the error message in an alert box
+        </script>a
+    <?php endif; ?>
+
+    <script src="<?php echo BASE_URL ?>js/auth.js"></script>
 </body>
 </html>

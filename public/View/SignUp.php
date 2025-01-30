@@ -1,3 +1,16 @@
+<?php
+    require_once __DIR__ . '/../../config/config.php'; 
+    session_start();
+
+    if(isset($_SESSION["username"])){
+        header("Location: " . BASE_URL . "index.php");
+        exit();
+    }
+    
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +33,7 @@
                     stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
 
-            <a href="../index.html">Devjobs</a>
+            <a href="../index.php">Devjobs</a>
 
         </div>
 
@@ -38,7 +51,7 @@
                 </p>
     
                 <div class="form-container">
-                    <form action="" id="sign-up">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);  ?>" method="post" id="sign-up">
                         <!-- Labels and inputs for name and email -->
                         <div class="form-group">
                             <div class="labels">
@@ -71,7 +84,7 @@
                         </div>
     
                         
-                        <button type="submit">Sign Up</button>
+                        <button type="submit" name="register" id="submitBtn">Sign Up</button>
                         <hr>
     
               
@@ -86,9 +99,8 @@
                             </a>
                         </div>
     
-               
-                        
                     </form>
+                    
                 
                 </div>
             </div>
@@ -122,7 +134,8 @@
 
 
     <!-- SCRIPT JS -->
-    <script src="../js/sign-up.js"></script>
+    <script src="../js/test.js"></script>
+    
 
 </body>
 

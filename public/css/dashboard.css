@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+body{
+    display: flex;
+
+}
+
+.sidebar{
+    display: flex;
+    padding-top: 25px;
+    flex-direction: column;
+    width: 350px;
+    height: 100vh;
+    background-color: #7765ec;
+    color: white;
+}
+
+.navbar-logo > a, svg{
+    font-size: 35px;
+    color: white !important;
+}
+.navbar-logo>svg{
+    width: 55px !important;
+}
+
+.navbar-logo{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center !important;
+}
+
+.stats {
+    display: flex;
+    gap: 10%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#content {
+    height: 100vh;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40%;
+    font-size: 30px;
+    gap: 30px;
+}
+.links > a{
+    padding-left: 35px;
+    font-family: "Bai Jamjuree", serif;
+    font-style: normal;
+}
+
+
+
+/* STATS CARDS */
+
+.content{
+    width: 100%;
+}
+
+#stats > p{
+    width: 100%;
+    font-size: 60px;
+    text-align: center;
+    align-self: center;
+}
+
+.stats-card{
+    border: 2px solid #7B66FF;
+    border-radius: 8px;
+    height: 250px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    font-family: "Bai Jamjuree", serif;
+    font-style: normal; 
+    padding: 16px 8px; 
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+
+.shine-effect:hover {
+    box-shadow: 10px 5px  25px rgba(172, 162, 240, 0.8);
+}
+
+.stats-card > h1{
+    text-align: center;
+
+}
+.stats-card > h3{
+    align-self: center;
+}
+
+.stats-card > h1,h3,h4{
+    font-weight: 500;
+}
+
+.stats-card > #count{
+    margin-top: 20px;
+    font-size: 50px;
+    color: #7B66FF;
+}
+
+
+#stats{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-family: "Bai Jamjuree", serif;
+    font-style: normal; 
+    height: 100vh;
+}
+
+
+/* TABLE DESIGN */
+#table{
+    border-collapse: collapse;
+    width: 100%;
+    font-family: "Bai Jamjuree", serif;
+    font-style: normal; 
+
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #DDD;
+  }
+tr:hover {background-color: #aca2f0;}
+
+#table ::view-transition-new{
+    border-bottom: 1px solid #4b0202;
+  }

@@ -47,7 +47,7 @@
                 <h2>Create account</h2>
                 <p>
                     Already have an account? 
-                    <span><a href="./SignIn.html">Sign in</a></span>
+                    <span><a href="<?php  BASE_URL ?>login.php">Sign in</a></span>
                 </p>
     
                 <div class="form-container">
@@ -134,7 +134,7 @@
 
 
     <!-- SCRIPT JS -->
-    <script src="../js/test.js"></script>
+    <script src="../js/sign-up.js"></script>
     
 
 </body>

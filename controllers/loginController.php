@@ -1,8 +1,5 @@
 <?php
 
-
-
-
  
     include_once __DIR__ . '/../database/database.php';
     include_once __DIR__ . '/../userRepo/userRepo.php';
@@ -21,7 +18,7 @@
 
 
             if($user && password_verify($password, $user["password"])){
-                
+                $_SESSION['user_id'] = $user['id'];
                 $_SESSION["email"] = $user['email'];
                 $_SESSION["username"] = $user['username'];
                 $_SESSION["role"] = $user['role'];
@@ -43,8 +40,3 @@
 
 
 ?>
-
-
-
-
-

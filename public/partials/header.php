@@ -39,10 +39,12 @@
             <li class="nav-item"><?php echo htmlspecialchars($_SESSION["username"])  . " (" . htmlspecialchars($_SESSION["role"]) . ")"?></li>
             
         <?php if($_SESSION["role"] === "admin"): ?>
-            <a href="#">Dashboard</a>
+            <li class="nav-item"><a href="<?php echo BASE_URL ?>dashboard/dashboard.php">Dashboard</a></li>
         <?php endif;?>
 
-        <a href="<?php echo BASE_URL; ?>partials/logout.php">Log Out</a>
+        <form action="<?php echo BASE_URL;?>partials/logout.php" class="login-button" method="post">
+                <input type="submit" value="Log out" id="SignIn">
+        </form>
 
 
 

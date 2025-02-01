@@ -1,5 +1,14 @@
 <?php
+    session_start();
     require_once __DIR__ . '/../config/config.php'; 
+    include_once '../userRepo/userRepo.php';
+    $userRepo = new userRepo();
+    $user_id = $_SESSION['user_id'] ?? null;
+    $package = $userRepo->getUserPackage($user_id);
+
+    
+    $disable_post_job = !$user_id; // Only check if user is logged in
+    $disable_premium_button = !$user_id || $package === 'basic'; 
 
 
 ?>
@@ -32,12 +41,14 @@
                     tech professionals to achieve their dream roles effortlessly. Join us!</p>
 
                 <div id="buttonat">
-                    <form action="./index.html" method="get">
-                        <input type="submit" value="Post a free job" id="post-job">
-                    </form>
-                    <form action="./index.html">
-                        <input type="submit" value="Learn more" id="learn-more">
-                    </form>
+                    <a href="<?php echo BASE_URL ?>View/jobForm.php">
+                        <input type="submit" value="Post a free job" id="post-job" <?php echo $disable_post_job ? 'disabled' : ''; ?>>
+                    </a>
+                   
+                    <a href="<?php echo BASE_URL ?>View/freeJob.php">
+                        <input type="submit" value="Learn more" id="learn-more" <?php echo $disable_premium_button ? 'disabled' : ''; ?>>
+                    </a>
+                   
 
                 </div>
             </div>

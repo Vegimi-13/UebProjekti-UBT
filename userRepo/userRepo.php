@@ -184,6 +184,23 @@
         echo "<script>alert('Update was successful');</script>";
     }
 
+    function getUserPackage($id) {
+        $conn = $this->connection;
+    
+        $sql = "SELECT package FROM users WHERE id = ?";
+        
+        try {
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$id]);
+            $package = $stmt->fetchColumn(); // Fetch only the package column
+    
+            return $package; // Returns 'basic' or 'premium'
+        } catch (PDOException $e) {
+            echo "Error fetching package: " . $e->getMessage();
+            return null;
+        }
+    }
+
 
     
 

@@ -6,7 +6,9 @@
     unset($_SESSION['errorMessage']);
 
 
-
+    if (isset($_GET['msg']) && $_GET['msg'] === 'UserDeleted') {
+        echo '<script> alert("Your account has been deleted. Please log in again.")</script';
+    }
     if(isset($_SESSION["username"])){
         header("Location: " .BASE_URL . "index.php");
         exit();

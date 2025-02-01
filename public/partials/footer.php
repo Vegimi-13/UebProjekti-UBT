@@ -1,3 +1,15 @@
+<?php 
+
+include_once  __DIR__ . '/../../config/config.php';
+
+
+
+
+
+
+?>
+
+
 <div>
      <footer id="footer">
         <div class="footer-container-row-1">
@@ -14,20 +26,26 @@
         </div>
         <div class="footer-pages">
             <ul>
-                <li class="active-link"><a href="#">Find Jobs</a></li>
-                <li> <a href="./about.html">About Us</a></li>
-                <li> <a href="./pricing.html">Pricing</a></li>
+                <li class="<?php echo ($current_page == 'index.php') ? 'active-link' : ''; ?>"><a href="<?php echo BASE_URL ?>index.php">Find Jobs</a></li>
+                <li class="<?php echo ($current_page == 'about.php') ? 'active-link' : ''; ?>"> <a href="<?php echo BASE_URL ?>about.php">About Us</a></li>
+                <li class="<?php echo ($current_page == 'pricing.php') ? 'active-link' : ''; ?>"> <a href="<?php echo BASE_URL ?>pricing.php">Pricing</a></li>
             </ul>
-            <div class="login-button">
-                <form action="./partials/SignIn.html">
-                    <input type="submit" value="Sign in" id="SignIn">
-                
-                </form>
-                <form action="./partials/SignUp.html">
-                    <input type="submit" value="Sign up" id="signup-button">
-                </form>
-                
-            </div>
+
+
+            <?php if(isset($_SESSION["role"])): ?>
+                <p>You are logged in as: <?php echo htmlspecialchars($_SESSION["role"]) ?></p>
+            <?php else: ?>
+                <div class="login-button">
+                    <form action="<?php echo BASE_URL?>View/login.php">
+                        <input type="submit" value="Sign in" id="SignIn">
+                    
+                    </form>
+                    <form action="<?php echo BASE_URL?>View/SignUp.php">
+                        <input type="submit" value="Sign up" id="signup-button">
+                    </form>
+                    
+                </div>
+            <?php endif; ?>
 
         </div>
         <hr>
@@ -49,3 +67,5 @@
 
         </footer>
     </div>
+
+

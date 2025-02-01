@@ -84,6 +84,91 @@
     }
 
 
+    function insertJob($job)
+    {
+        $conn = $this->connection;
+
+        $company_logo = $job->getCompanyLogo();
+        $company_name = $job->getCompanyName();
+        $job_title = $job->getJobTitle();
+        $job_description = $job->getJobDescription();
+        $salary = $job->getSalary();
+        $job_type = $job->getJobType();
+
+        $sql = "INSERT INTO jobs (company_logo, company_name, job_title, job_description, salary, job_type) 
+                        VALUES(?,?,?,?,?,?)";
+
+        try {
+            $statement = $conn->prepare($sql);
+            $statement->execute([$company_logo, $company_name, $job_title, $job_description, $salary, $job_type]);
+        } catch (PDOException $e) {
+            echo "<script>alert('Error Inserting Job!!!" . $e->getMessage() . "')</script>";
+        }
+    }
+    function getJobs()
+    {
+        $conn = $this->connection;
+
+        $sql = "SELECT * FROM jobs";
+        try {
+            $statement = $conn->query($sql);
+            $jobs = $statement->fetchAll(PDO::FETCH_ASSOC); // Fetch all jobs
+            return $jobs;
+        } catch (PDOException $e) {
+            echo "Error fetching jobs: " . $e->getMessage();
+            return [];
+        }
+    }
+
+    function countJobs(){
+        $conn = $this->connection;
+
+        $sql = "SELECT COUNT(*) FROM jobs";
+
+        try {
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchColumn();
+            return $result;
+        } catch (PDOException $e) {
+            echo "Error counting users: " . $e->getMessage();
+        }
+    }
+
+
+    function deleteUser($id) {
+        $conn = $this->connection;
+
+      
+        $sql = "DELETE FROM users WHERE id=?";
+
+        $statement = $conn->prepare($sql); 
+
+       
+        return $statement->execute([$id]);
+        
+
+       
+        echo "<script>alert('Delete was successful');</script>";
+    }
+
+
+    function updateUser($id, $username, $email, $role) {
+        $conn = $this->connection;
+
+
+        $sql = "UPDATE users SET username=?, email=?, role=? WHERE id=?";
+
+        $statement = $conn->prepare($sql); 
+
+      
+        $statement->execute([ $username,$email,$role, $id]);
+
+      
+        echo "<script>alert('Update was successful');</script>";
+    }
+
+
     
 
         

@@ -10,8 +10,9 @@ class Job {
     private $salary;
     private $job_type;
     private $created_at;
+    private $created_by;
 
-    function __construct($company_logo, $company_name,$company_desc, $job_title, $job_description, $salary, $job_type) {
+    function __construct($company_logo, $company_name,$company_desc, $job_title, $job_description, $salary, $job_type, $created_by) {
         $this->company_logo = $company_logo;
         $this->company_name = $company_name;
         $this->company_desc = $company_desc;
@@ -45,5 +46,8 @@ class Job {
 
     function getJobType() {
         return $this->job_type;
+    }
+    function getCreatedBy(){
+        return $this->created_by;
     }
 }

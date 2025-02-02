@@ -29,6 +29,7 @@ include_once  __DIR__ . '/../../config/config.php';
                 <li class="<?php echo ($current_page == 'index.php') ? 'active-link' : ''; ?>"><a href="<?php echo BASE_URL ?>index.php">Find Jobs</a></li>
                 <li class="<?php echo ($current_page == 'about.php') ? 'active-link' : ''; ?>"> <a href="<?php echo BASE_URL ?>about.php">About Us</a></li>
                 <li class="<?php echo ($current_page == 'pricing.php') ? 'active-link' : ''; ?>"> <a href="<?php echo BASE_URL ?>pricing.php">Pricing</a></li>
+                <li><a href="<?php echo BASE_URL ?>View/freejobs.php">See All Jobs</a></li>
             </ul>
 
 

@@ -8,12 +8,13 @@ if(!(isset($_SESSION["role"]) && $_SESSION["role"] === "admin")){
 
 
 
+
 include_once '../../userRepo/userRepo.php';
 
 $userRepo = new userRepo();
 
 $users = $userRepo -> getAllUsers();
-$jobs = $userRepo ->getJobs();
+$jobs = $userRepo ->getFreeJobs();
 
 $userCount = $userRepo ->countUsers();
 $jobCount = $userRepo->countJobs();
@@ -137,6 +138,8 @@ $jobCount = $userRepo->countJobs();
                         <th>Job Type</th>
                         <th>Created By</th>
                         <th>Created at</th>
+                        <th>Location</th>
+                        <th>Job post</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -150,6 +153,9 @@ $jobCount = $userRepo->countJobs();
                             <td><?php echo htmlspecialchars($job['job_type'])?></td>
                             <td><?php echo htmlspecialchars($job['creator_name'])?></td>
                             <td><?php echo htmlspecialchars($job['created_at'])?></td>
+                            <td><?php echo htmlspecialchars($job['location'])?></td>
+                            <td><?php echo htmlspecialchars($job['job_post'])?></td>
+                            
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

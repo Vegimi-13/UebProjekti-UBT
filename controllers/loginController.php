@@ -10,6 +10,7 @@
     if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["login"])){
         $email = $_POST['email'];
         $password = $_POST["passwordField"];
+        $rememberMe = isset($_POST['rememberMe']);
 
         try{
             $userRepo = new userRepo();
@@ -22,6 +23,12 @@
                 $_SESSION["email"] = $user['email'];
                 $_SESSION["username"] = $user['username'];
                 $_SESSION["role"] = $user['role'];
+                if ($rememberMe) {
+                    setcookie("remember_email", $email, time() + (86400 * 30), "/"); // 30 days expiration
+                } else {
+                    // Clear the cookie if Remember Me is not checked
+                    setcookie("remember_email", "", time() - 3600, "/");
+                }
 
                 header("Location: ../public/index.php");
                 exit();

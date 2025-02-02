@@ -212,6 +212,23 @@
         }
     }
 
+    function getFreeJobs()
+    {
+        $conn = $this->connection;
+
+        $sql = "SELECT jobs.*, users.username AS creator_name
+        FROM jobs
+        JOIN users ON jobs.created_by = users.id";
+        try {
+            $statement = $conn->query($sql);
+            $jobs = $statement->fetchAll(PDO::FETCH_ASSOC); // Fetch all jobs
+            return $jobs;
+        } catch (PDOException $e) {
+            echo "Error fetching jobs: " . $e->getMessage();
+            return [];
+        }
+    }
+
 
     
 

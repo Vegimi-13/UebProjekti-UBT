@@ -166,3 +166,8 @@ tr:hover {background-color: #c3bcec;}
     text-align: center !important;
     width: fit-content !important;
 }
+
+#jobs {
+    display: flex;
+    flex-direction: column;
+}

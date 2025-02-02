@@ -61,7 +61,7 @@
             <div class="form-container">
                 <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post" id="signinForm">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Email Address">
+                    <input type="email" name="email" id="email" placeholder="Email Address" value="<?php echo isset($_COOKIE['remember_email']) ? $_COOKIE['remember_email'] : ''; ?>">
                     <span class="error" id="emailError"></span>
 
 
@@ -73,7 +73,8 @@
 
                     <div class="remember-me">
                         <label>
-                            <input type="checkbox" name="option1" value="Option 1"> Remember me
+                            <input type="checkbox" name="rememberMe" value="1"> 
+                            <?php echo isset($_COOKIE['remember_email']) ? 'checked' : ''; ?> Remember me
                         </label>
                         <p>Forgot password?</p>
                     </div>

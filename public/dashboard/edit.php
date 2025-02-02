@@ -14,7 +14,6 @@ if(!(isset($_SESSION["role"]) && $_SESSION["role"] === "admin")){
 }
 
 
-
 if (isset($_POST['editBtn'])) {
     $id = $user['id'];
     $username = $_POST['username'];

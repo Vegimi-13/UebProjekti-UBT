@@ -115,6 +115,8 @@ $jobCount = $userRepo->countJobs();
                             <td><?php echo htmlspecialchars($user['role']); ?></td>
                             <td><?php echo htmlspecialchars($user['package']); ?></td>
                             <td><?php echo htmlspecialchars($user['created_at']); ?></td>
+                            <td colspan="3" id="editBTN"><a  href="edit.php<?php echo"?id=$user[id]"?>">EDIT</a></td>
+                            <td id="deleteBTN"><a href="delete.php<?php echo"?id=$user[id]"?>">DELETE</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -124,8 +126,37 @@ $jobCount = $userRepo->countJobs();
 
         <div id="jobs" class="content-section hidden">
             <h1>Jobs</h1>
-            <p>List of available jobs...</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>COMPANY NAME</th>
+                        <th>Job Title</th>
+                        <th>Job Description</th>
+                        <th>Salary</th>
+                        <th>Job Type</th>
+                        <th>Created By</th>
+                        <th>Created at</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($jobs as $job): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($job['id'])?></td>
+                            <td><?php echo htmlspecialchars($job['company_name'])?></td>
+                            <td><?php echo htmlspecialchars($job['job_title'])?></td>
+                            <td><?php echo htmlspecialchars($job['job_desc'])?></td>
+                            <td><?php echo htmlspecialchars($job['salary'])?></td>
+                            <td><?php echo htmlspecialchars($job['job_type'])?></td>
+                            <td><?php echo htmlspecialchars($job['creator_name'])?></td>
+                            <td><?php echo htmlspecialchars($job['created_at'])?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            
         </div>
+
 
         <div id="options" class="content-section hidden">
             <h1>Options</h1>

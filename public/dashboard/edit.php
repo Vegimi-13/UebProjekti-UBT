@@ -19,10 +19,11 @@ if (isset($_POST['editBtn'])) {
     $id = $user['id'];
     $username = $_POST['username'];
     $email = $_POST['email'];
+    $package = $_POST['package'];
     $role = $_POST['role'];
 
 
-    $userRepository->updateUser($id, $username, $email, $role);
+    $userRepository->updateUser($id, $username, $email,$package, $role,);
     header("location:../dashboard/dashboard.php");
     exit();
 }
@@ -139,6 +140,12 @@ if (isset($_POST['editBtn'])) {
 
             <label for="email">Email:</label>
             <input type="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" required placeholder="Enter your new Email"> <br>
+
+            <label for="">Package:</label>
+            <select name="package" required>
+                <option value="basic" <?= ($user['package'] == 'basic') ? 'selected' : '' ?>>Basic</option>
+                <option value="premium" <?= ($user['package'] == 'premium') ? 'selected' : '' ?>>Premium</option>
+            </select> <br>
 
             <label for="role">Role:</label>
             <select name="role" required>

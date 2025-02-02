@@ -27,11 +27,11 @@
 
 
 
-            $sql = "INSERT INTO users (username, password, email) 
+            $sql = "INSERT INTO users (username,email ,password) 
                         VALUES(?,?,?)";
             try {
                 $statement = $conn->prepare($sql);
-                $statement->execute([$username, $password, $email]);
+                $statement->execute([$username, $email, $password]);
             } catch (PDOException $e) {
                 echo "<script>alert('Error Inserting user!!!" . $e->getMessage() . "')</script>";
             }
@@ -104,17 +104,18 @@
             $company_desc = $job->getCompanyDesc();
             $job_description = $job->getJobDescription();
             $salary = $job->getSalary();
+            $location = $job->getLocation();
             $job_type = $job->getJobType();
             $created_by = $job->getCreatedBy();
             $job_post = $job->getJobPost();
 
-            $sql = "INSERT INTO jobs (company_logo, company_name, job_title, company_desc, job_description, salary, job_type, created_by, job_post)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO jobs (company_logo, company_name, job_title, company_desc, job_description, salary, location, job_type, created_by, job_post)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
 
             try {
                 // Prepare and execute the statement
                 $statement = $conn->prepare($sql);
-                $statement->execute([$company_logo, $company_name, $job_title, $company_desc, $job_description, $salary, $job_type, $created_by, $job_post]);
+                $statement->execute([$company_logo, $company_name, $job_title, $company_desc, $job_description, $salary,$location, $job_type, $created_by, $job_post]);
 
                 echo "Job successfully inserted into the database!";
             } catch (PDOException $e) {
@@ -125,36 +126,15 @@
     
 
 
-    // function insertJob($job)
-    // {
-    //     $conn = $this->connection;
-
-    //     $company_logo = $job->getCompanyLogo();
-    //     $company_name = $job->getCompanyName();
-    //     $job_title = $job->getJobTitle();
-    //     $company_desc = $job->getCompanyDesc();
-    //     $job_description = $job->getJobDescription();
-    //     $salary = $job->getSalary();
-    //     $job_type = $job->getJobType();
-    //     $created_by = $job->getCreatedBy();
-    //     $job_post = $job->getJobPost();
-
-
-    //     $sql = "INSERT INTO jobs (company_logo, company_name, job_title, company_desc, job_description, salary, job_type, created_by, job_post) 
-    //     VALUES(?,?,?,?,?,?,?,?,?)";
-
-    //     try {
-    //         $statement = $conn->prepare($sql);
-    //         $statement->execute([$company_logo, $company_name,$job_title,$company_desc, $job_description, $salary, $job_type,$created_by,$job_post]);
-    //     } catch (PDOException $e) {
-    //         echo "<script>alert('Error Inserting Job!!!" . $e->getMessage() . "')</script>";
-    //     }
-    // }
     function getJobs()
     {
         $conn = $this->connection;
 
-        $sql = "SELECT * FROM jobs";
+        $sql = "SELECT jobs.*, users.username AS creator_name
+            FROM jobs
+            JOIN users ON jobs.created_by = users.id
+            WHERE jobs.job_post = 'premium'
+            LIMIT 9";
         try {
             $statement = $conn->query($sql);
             $jobs = $statement->fetchAll(PDO::FETCH_ASSOC); // Fetch all jobs
@@ -200,16 +180,16 @@
     }
 
 
-    function updateUser($id, $username, $email, $role) {
+    function updateUser($id, $username, $email,$package, $role) {
         $conn = $this->connection;
 
 
-        $sql = "UPDATE users SET username=?, email=?, role=? WHERE id=?";
+        $sql = "UPDATE users SET username=?, email=?,package=?, role=? WHERE id=?";
 
         $statement = $conn->prepare($sql); 
 
       
-        $statement->execute([ $username,$email,$role, $id]);
+        $statement->execute([ $username,$email, $package,$role, $id]);
 
       
         echo "<script>alert('Update was successful');</script>";

@@ -8,18 +8,20 @@ class Job {
     private $job_title;
     private $job_description;
     private $salary;
+    private $location;
     private $job_type;
     private $created_at;
     private $created_by;
     private $job_post;
 
-    function __construct($company_logo, $company_name,$job_title, $company_desc, $job_description, $salary, $job_type, $created_by,$job_post) {
+    function __construct($company_logo, $company_name,$job_title, $company_desc, $job_description, $salary,$location, $job_type, $created_by,$job_post) {
         $this->company_logo = $company_logo;
         $this->company_name = $company_name;
         $this->job_title = $job_title;
         $this->company_desc = $company_desc;
         $this->job_description = $job_description;
         $this->salary = $salary;
+        $this->location = $location;
         $this->job_type = $job_type;
         $this->created_by = $created_by;
         $this->job_post = $job_post;
@@ -45,6 +47,9 @@ class Job {
 
     function getSalary() {
         return $this->salary;
+    }
+    function getLocation(){
+        return $this->location;
     }
 
     function getJobType() {

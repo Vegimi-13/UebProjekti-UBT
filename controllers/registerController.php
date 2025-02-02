@@ -9,7 +9,7 @@
         $email = $_POST["email"];
         $hash = password_hash($password, PASSWORD_DEFAULT);
 
-        $user = new User($id,$username, $hash, $email);
+        $user = new User($id,$username, $email, $hash);
 
         $userRepo = new userRepo();
 

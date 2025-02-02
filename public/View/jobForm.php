@@ -150,7 +150,10 @@
 
            
                 <label>Salary:</label>
-                <input type="text" name="salary"><br><br>
+                <input type="text" name="salary" required><br><br>
+
+                <label for="">Location:</label>
+                <input type="text" name="location" required>
 
                 <label>Job Type:</label>
                 <select name="job_type" required>

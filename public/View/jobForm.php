@@ -5,6 +5,10 @@
         exit();
     }
 
+    
+
+
+
 ?>
 
 
@@ -115,7 +119,7 @@
 
 
         <h3>Post a New Job</h3>
-        <form action="../controllers/job_controller.php" method="post" enctype="multipart/form-data">
+        <form action="../../controllers/job_controller.php" method="post" enctype="multipart/form-data">
 
             <div class="company-logo-name">
 
@@ -130,7 +134,7 @@
             
 
             <label for="">Company Description</label>
-            <textarea name="company_description" rows="4" required> </textarea>
+            <textarea name="company_desc" rows="4" required> </textarea>
             <div class="company-logo-name">
 
             
@@ -155,6 +159,8 @@
                     <option value="Hybrid">Hybrid</option>
                 </select><br><br>
             </div>
+            <input type="hidden" name="job_post" value="<?php echo htmlspecialchars($_GET['job_post'] ?? 'free'); ?>">
+
 
             <button type="submit" name="submit">Post Job</button>
         </form>

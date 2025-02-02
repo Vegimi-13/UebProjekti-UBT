@@ -123,6 +123,10 @@ body{
 
 
 /* TABLE DESIGN */
+.content-section{
+    font-family: "Bai Jamjuree", serif;
+    font-style: normal; 
+}
 #table{
     border-collapse: collapse;
     width: 100%;
@@ -135,8 +139,30 @@ th, td {
     text-align: left;
     border-bottom: 1px solid #DDD;
   }
-tr:hover {background-color: #aca2f0;}
+tr:hover {background-color: #c3bcec;}
 
 #table ::view-transition-new{
     border-bottom: 1px solid #4b0202;
-  }
+}
+
+
+.content-section > h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    font-family: "Bai Jamjuree", serif !important;
+    font-style: normal; 
+}
+
+#editBTN{
+    border: 0.5px solid #7765ec !important;
+    text-align: center !important;
+}
+#deleteBTN{
+    border: 0.5px solid #7765ec ;
+    background-color: #7765ec !important;
+    color: white !important;
+    text-align: center !important;
+    width: fit-content !important;
+}

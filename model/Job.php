@@ -11,15 +11,18 @@ class Job {
     private $job_type;
     private $created_at;
     private $created_by;
+    private $job_post;
 
-    function __construct($company_logo, $company_name,$company_desc, $job_title, $job_description, $salary, $job_type, $created_by) {
+    function __construct($company_logo, $company_name,$job_title, $company_desc, $job_description, $salary, $job_type, $created_by,$job_post) {
         $this->company_logo = $company_logo;
         $this->company_name = $company_name;
-        $this->company_desc = $company_desc;
         $this->job_title = $job_title;
+        $this->company_desc = $company_desc;
         $this->job_description = $job_description;
         $this->salary = $salary;
         $this->job_type = $job_type;
+        $this->created_by = $created_by;
+        $this->job_post = $job_post;
     }
 
     function getCompanyLogo() {
@@ -49,5 +52,8 @@ class Job {
     }
     function getCreatedBy(){
         return $this->created_by;
+    }
+    function getJobPost(){
+        return $this->job_post;
     }
 }

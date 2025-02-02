@@ -94,31 +94,62 @@
             echo "Error counting users: " . $e->getMessage();
         }
     }
-
-
     function insertJob($job)
-    {
-        $conn = $this->connection;
+        {
+            $conn = $this->connection;
 
-        $company_logo = $job->getCompanyLogo();
-        $company_name = $job->getCompanyName();
-        $job_title = $job->getJobTitle();
-        $company_desc = $job->getCompanyDesc();
-        $job_description = $job->getJobDescription();
-        $salary = $job->getSalary();
-        $job_type = $job->getJobType();
-        $created_by = $job->getCreatedBy();
+            $company_logo = $job->getCompanyLogo();
+            $company_name = $job->getCompanyName();
+            $job_title = $job->getJobTitle();
+            $company_desc = $job->getCompanyDesc();
+            $job_description = $job->getJobDescription();
+            $salary = $job->getSalary();
+            $job_type = $job->getJobType();
+            $created_by = $job->getCreatedBy();
+            $job_post = $job->getJobPost();
 
-        $sql = "INSERT INTO jobs (company_logo, company_name, job_title, job_desc, salary, job_type, created_by) 
-                        VALUES(?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO jobs (company_logo, company_name, job_title, company_desc, job_description, salary, job_type, created_by, job_post)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try {
-            $statement = $conn->prepare($sql);
-            $statement->execute([$company_logo, $company_name,$company_desc, $job_title, $job_description, $salary, $job_type]);
-        } catch (PDOException $e) {
-            echo "<script>alert('Error Inserting Job!!!" . $e->getMessage() . "')</script>";
+            try {
+                // Prepare and execute the statement
+                $statement = $conn->prepare($sql);
+                $statement->execute([$company_logo, $company_name, $job_title, $company_desc, $job_description, $salary, $job_type, $created_by, $job_post]);
+
+                echo "Job successfully inserted into the database!";
+            } catch (PDOException $e) {
+                // Debugging: catch and display any errors
+                echo "Error: " . $e->getMessage();
+            }
         }
-    }
+    
+
+
+    // function insertJob($job)
+    // {
+    //     $conn = $this->connection;
+
+    //     $company_logo = $job->getCompanyLogo();
+    //     $company_name = $job->getCompanyName();
+    //     $job_title = $job->getJobTitle();
+    //     $company_desc = $job->getCompanyDesc();
+    //     $job_description = $job->getJobDescription();
+    //     $salary = $job->getSalary();
+    //     $job_type = $job->getJobType();
+    //     $created_by = $job->getCreatedBy();
+    //     $job_post = $job->getJobPost();
+
+
+    //     $sql = "INSERT INTO jobs (company_logo, company_name, job_title, company_desc, job_description, salary, job_type, created_by, job_post) 
+    //     VALUES(?,?,?,?,?,?,?,?,?)";
+
+    //     try {
+    //         $statement = $conn->prepare($sql);
+    //         $statement->execute([$company_logo, $company_name,$job_title,$company_desc, $job_description, $salary, $job_type,$created_by,$job_post]);
+    //     } catch (PDOException $e) {
+    //         echo "<script>alert('Error Inserting Job!!!" . $e->getMessage() . "')</script>";
+    //     }
+    // }
     function getJobs()
     {
         $conn = $this->connection;

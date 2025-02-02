@@ -41,11 +41,11 @@
                     tech professionals to achieve their dream roles effortlessly. Join us!</p>
 
                 <div id="buttonat">
-                    <a href="<?php echo BASE_URL ?>View/jobForm.php">
+                    <a href="<?php echo BASE_URL ?>View/jobForm.php?job_post=free">
                         <input type="submit" value="Post a free job" id="post-job" <?php echo $disable_post_job ? 'disabled' : ''; ?>>
                     </a>
                    
-                    <a href="<?php echo BASE_URL ?>View/freeJob.php">
+                    <a href="<?php echo BASE_URL ?>View/jobForm.php?job_post=premium">
                         <input type="submit" value="Learn more" id="learn-more" <?php echo $disable_premium_button ? 'disabled' : ''; ?>>
                     </a>
                    

@@ -46,7 +46,7 @@
                     </a>
                    
                     <a href="<?php echo BASE_URL ?>View/jobForm.php?job_post=premium">
-                        <input type="submit" value="Learn more" id="learn-more" <?php echo $disable_premium_button ? 'disabled' : ''; ?>>
+                        <input type="submit" value="Premium Job" id="learn-more" <?php echo $disable_premium_button ? 'disabled' : ''; ?>>
                     </a>
                    
 

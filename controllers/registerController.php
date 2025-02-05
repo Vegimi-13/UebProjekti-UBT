@@ -9,14 +9,27 @@
         $email = $_POST["email"];
         $hash = password_hash($password, PASSWORD_DEFAULT);
 
-        $user = new User($id,$username, $email, $hash);
+        // $user = new User($id,$username, $email, $hash);
 
         $userRepo = new userRepo();
 
-        $userRepo->insertUser($user);
+        if ($userRepo->userExists($username, $email)) {
+            echo "<script>
+                    alert('User already exists! Please use a different username or email.');
+                    window.location.href = '../public/View/signup.php';        
+                </script>";
+        } else {
+            $user = new User(null, $username, $email, $hash);
+            $userRepo->insertUser($user);
+            
+            header("Location: ../public/View/login.php");
+            exit();
+        }
+
+        // $userRepo->insertUser($user);
         
-        header("Location: ../public/View/login.php");
-        exit();
+        // header("Location: ../public/View/login.php");
+        // exit();
        
     }
 

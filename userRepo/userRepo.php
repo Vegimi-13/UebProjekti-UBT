@@ -229,6 +229,16 @@
         }
     }
 
+    public function userExists($username, $email) {
+        $conn = $this->connection;
+    
+        $sql = "SELECT id FROM users WHERE username = ? OR email = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$username, $email]);
+        
+        return $stmt->fetch() ? true : false;
+    }
+
 
     
 
